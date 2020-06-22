@@ -24,12 +24,20 @@ public class BogoSorter extends Sorter {
 		int j = 0;
 		int placeHolder = 0;
 		Random random = new Random();
-		if (_00_SortedArrayChecker.intArraySorted(array) == false) {
+		while (_00_SortedArrayChecker.intArraySorted(array) == false) {
 			i = random.nextInt(array.length);
 			j = random.nextInt(array.length);
-			placeHolder = array[i];
-			array[i] = array[j];
-			array[j] = placeHolder;
+			if (i > j && array[i] < array[j]) {
+				placeHolder = array[i];
+				array[i] = array[j];
+				array[j] = placeHolder;
+				display.updateDisplay();
+			}else if (j > i && array[j] < array[i]) {
+				placeHolder = array[i];
+				array[i] = array[j];
+				array[j] = placeHolder;
+				display.updateDisplay();
+			}
 		}
 	}
 }

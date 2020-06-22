@@ -12,7 +12,7 @@ public class SelectionSorter extends Sorter {
 		//1. make a for loop to iterate through all but the last 
 		//   element of the array
 		int placeHolder = 0;
-		for (int i = 0; i < array.length; i++) {
+		for (int i = 0; i < array.length - 1; i++) {
 			//2. create an integer called index and set it equal to i
 			int index = i;
 			//3. make another for loop that starts at i + 1 and
