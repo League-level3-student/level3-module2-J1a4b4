@@ -21,7 +21,7 @@ public class _03_ExponentialSearch {
 		//		and the array element at counter is less than or equal to value
 		while (counter < array.length && array[counter] <= value) {
 			//5. inside the while loop, double the value of counter.
-			counter = counter * counter;
+			counter = counter * 2;
 		}
 		//6. create an integer called minimum
 		int minimum = 0;

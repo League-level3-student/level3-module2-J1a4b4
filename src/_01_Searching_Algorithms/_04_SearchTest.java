@@ -27,7 +27,7 @@ class _04_SearchTest {
 		int[] i = {1, 3, 5, 7, 9};
 		int[] ii = {2, 5, 8, 10, 828};
 		int[] iii = {0, 3, 5, 283, 292, 858, 910};
-		assertEquals(_01_BinarySearch.binarySearch(i, 0, 4, 3), 2);
+		assertEquals(_01_BinarySearch.binarySearch(i, 0, 4, 3), 1);
 		assertEquals(_01_BinarySearch.binarySearch(ii, 0, 4, 828), 4);
 		assertEquals(_01_BinarySearch.binarySearch(iii, 0, 7, 1), -1);
 	}
@@ -48,8 +48,11 @@ class _04_SearchTest {
 	public void testExponentialSearch() {
 		//4. use the assertEquals method to test your exponential search method.
 		//   remember that the array must be sorted
-		int[] l = {};
-		int[] m = {};
-		int[] n = {};
+		int[] l = {1, 2, 3, 4, 5, 6};
+		int[] m = {0, 2, 5, 7, 8};
+		int[] n = {1, 2, 3, 4, 5};
+		assertEquals(_03_ExponentialSearch.exponentialSearch(l, 3), 2);
+		assertEquals(_03_ExponentialSearch.exponentialSearch(m, 8), 4);
+		assertEquals(_03_ExponentialSearch.exponentialSearch(n, 6), -1);
 	}
 }
