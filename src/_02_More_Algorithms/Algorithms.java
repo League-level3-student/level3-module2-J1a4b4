@@ -1,5 +1,6 @@
 package _02_More_Algorithms;
 
+import java.util.Arrays;
 import java.util.List;
 
 import _00_Sorting_Algorithms._00_SortedArrayChecker;
@@ -54,33 +55,19 @@ public class Algorithms {
 	}
 	
 	public static List<Double> sortScores(List<Double> scores){
-		List<Double> sortedScores = scores;
 		Double placeHolder = 0.0;
-		while (doubleArraySorted(sortedScores) == false) {
-			for (int i = 0; i < sortedScores.size(); i++) {
-				for (int j = i; j < sortedScores.size(); j++) {
-					if (sortedScores.get(i) > sortedScores.get(j)) {
-						placeHolder = sortedScores.get(i);
-						sortedScores.get(i) = sortedScores.get(j);
-					}
+		boolean sorted = false;
+		while (sorted == false) {
+			sorted = true;
+			for (int i = 0; i < scores.size() - 1; i++) {
+				if (scores.get(i) > scores.get(i + 1)) {
+					placeHolder = scores.get(i);
+					scores.set(i, scores.get(i + 1));
+					scores.set(i + 1, placeHolder);
+					sorted = false;
 				}
 			}
 		}
-		return sortedScores;
-	}
-	
-	static boolean doubleArraySorted(List<Double> doubles) {
-		boolean consistency = false;
-		for (int i = 0; i < doubles.size() - 1; i++) {
-			if (doubles.get(i) < doubles.get(i)) {
-				consistency = true;
-			}else {
-				consistency = false;
-			}
-		}
-		if (consistency == true) {
-			return true;
-		}
-		return false;
+		return scores;
 	}
 }
