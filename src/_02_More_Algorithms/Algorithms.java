@@ -70,4 +70,38 @@ public class Algorithms {
 		}
 		return scores;
 	}
+	
+	public static List<String> sortDNA(List<String> DNA){
+		String placeHolder = "";
+		boolean sorted = false;
+		while (sorted == false) {
+			sorted = true;
+			for (int i = 0; i < DNA.size() - 1; i++) {
+				if (DNA.get(i).length() > DNA.get(i + 1).length()) {
+					placeHolder = DNA.get(i);
+					DNA.set(i, DNA.get(i + 1));
+					DNA.set(i + 1, placeHolder);
+					sorted = false;
+				}
+			}
+		}
+		return DNA;
+	}
+	
+	public static List<String> sortWords(List<String> words){
+		String placeHolder = "";
+		boolean sorted = false;
+		while (sorted == false) {
+			sorted = true;
+			for (int i = 0; i < words.size() - 1; i++) {
+				if (words.get(i).compareTo(words.get(i + 1)) > 0) {
+					placeHolder = words.get(i);
+					words.set(i, words.get(i + 1));
+					words.set(i + 1, placeHolder);
+					sorted = false;
+				}
+			}
+		}
+		return words;
+	}
 }

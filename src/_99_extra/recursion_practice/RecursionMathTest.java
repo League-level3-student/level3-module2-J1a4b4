@@ -19,8 +19,10 @@ public class RecursionMathTest {
 	public void testDivision() {
 		//5  Add JUnit tests to test your method
 		assertEquals(23, RecursionMath.recursiveDivision(23, 1));
-		assertEquals(0, RecursionMath.recursiveDivision(34, 0));
+		RecursionMath.increment = 0;
 		assertEquals(3, RecursionMath.recursiveDivision(12, 4));
+		RecursionMath.increment = 0;
+		assertEquals(15, RecursionMath.recursiveDivision(75, 5));
 	}
 	
 	

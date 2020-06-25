@@ -19,20 +19,15 @@ public class RecursionMath {
 	
 	//6. Try this one on your own! 
 	//Hint: if divisor is bigger than number, you can't divide anymore
+	static int increment = 0;
+	
 	public static int recursiveDivision(int number, int divisor) {
-		if (divisor == 1) {
-			return number;
+		increment++;
+		if (divisor > number) {
+			return increment - 1;
 		}else {
-			if (divisor == 1) {
-				return number;
-			}else if (divisor == 0) {
-				System.out.println("Screw you!");
-				return 0;
-			}else if (divisor > number) {
-				return recursiveDivision(number - divisor, divisor);
-			}
+			return recursiveDivision(number - divisor, divisor);
 		}
-		return 0;
 	}
 	
 	//8. Try this one on your own!
